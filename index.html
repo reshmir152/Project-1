@@ -36,6 +36,35 @@
     .glow.one { background: #a855f7; top: -140px; left: -100px; }
     .glow.two { background: #22d3ee; right: -120px; bottom: -150px; animation-delay: -5s; }
 
+    .site-nav {
+      position: fixed;
+      z-index: 2;
+      top: 1.5rem;
+      right: clamp(1rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem;
+      border: 1px solid rgb(255 255 255 / 14%);
+      border-radius: 999px;
+      background: rgb(15 18 40 / 65%);
+      backdrop-filter: blur(14px);
+    }
+
+    .site-nav a {
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      color: #dbeafe;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .site-nav a:hover, .site-nav a[aria-current="page"] {
+      color: white;
+      background: rgb(255 255 255 / 12%);
+    }
+
     main {
       position: relative;
       width: min(90vw, 820px);
@@ -132,6 +161,11 @@
   </style>
 </head>
 <body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="login.html">Login</a>
+  </nav>
   <div class="glow one" aria-hidden="true"></div>
   <div class="glow two" aria-hidden="true"></div>
 
@@ -145,3 +179,4 @@
   </main>
 </body>
 </html>
+
